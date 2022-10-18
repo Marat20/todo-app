@@ -1,14 +1,24 @@
 {
   "todos": [
     {
-      "text": "sleep",
-      "done": false,
-      "id": 1
+      "text": "Know",
+      "done": true,
+      "id": 2
     },
     {
       "text": "Know",
+      "done": true,
+      "id": 3
+    },
+    {
+      "text": "clean",
       "done": false,
-      "id": 2
+      "id": 4
+    },
+    {
+      "text": "sleep",
+      "done": false,
+      "id": 5
     }
   ]
 }

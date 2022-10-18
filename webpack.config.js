@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.css', '.html'],
+        extensions: ['.js', '.jsx', '.css', '.html'],
         alias: {
             '@': path.resolve(__dirname, 'src')
         }
@@ -37,7 +37,7 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
-                test: /\.?js$/,
+                test: /\.?(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
