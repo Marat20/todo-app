@@ -1,22 +1,22 @@
 {
   "todos": [
     {
-      "text": "sleep",
+      "text": "Go for a walk",
       "done": true,
       "id": 5
     },
     {
-      "text": "fuck",
+      "text": "Meet Elena",
       "done": false,
       "id": 8
     },
     {
-      "text": "piss",
+      "text": "Buy a milk",
       "done": false,
       "id": 9
     },
     {
-      "text": "Know",
+      "text": "Teamwork",
       "done": true,
       "id": 10
     }
