@@ -4,6 +4,14 @@ Todo-app - это список дел и диспетчер задач. Это �
 
 Todo-app is the to-do list and task manager. It will help you gain concentration, organization and peace.
 
+<img src="./screenshot/screenshot1.png"
+     alt="Markdown"
+     style="float: left; margin-right: 10px;" />
+     
+<img src="./screenshot/screenshot2.png"
+     alt="Markdown"
+     style="float: left; margin-right: 10px;" />
+
 ### Start
 
 ```shell
