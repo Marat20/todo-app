@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { FC, memo } from 'react';
+import { TodoData } from '../../models/models';
 import {
   useUpdateTodosMutation,
   useDeleteTodosMutation,
-} from '../redux/todosApi';
-import { task } from '../helper/taskObj';
+} from '../../redux/todosApi';
+import { task } from '../../utils/taskObj';
 
-export const Todo = ({ text, id, done }) => {
+export const Todo: FC<TodoData> = memo(({ text, id, done }) => {
   const [updateTodos] = useUpdateTodosMutation();
   const [deleteTodos] = useDeleteTodosMutation();
 
-  const handleUpdateTodos = async (id, e) => {
+  const handleUpdateTodos = async (
+    id: string,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const updateTask = task(text, e.target.checked, id);
-    await updateTodos(updateTask);
+    updateTodos(updateTask);
   };
 
-  const handleDeleteTodos = async (id) => {
+  const handleDeleteTodos = async (id: string) => {
     await deleteTodos(id);
   };
 
@@ -28,7 +32,7 @@ export const Todo = ({ text, id, done }) => {
           name='todo'
           onChange={(e) => handleUpdateTodos(id, e)}
         />
-        <input type='text' className='text' value={text} readOnly />
+        <span className={`text ${done && 'done'}`}>{text}</span>
       </div>
       <div className='actions'>
         <button className='delete' onClick={() => handleDeleteTodos(id)}>
@@ -37,4 +41,4 @@ export const Todo = ({ text, id, done }) => {
       </div>
     </div>
   );
-};
+});

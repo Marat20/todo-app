@@ -1,4 +1,4 @@
-export const task = (text, done, id = '') => {
+export const task = (text: string, done: boolean, id = '') => {
     if (id) return {
         text,
         done,
