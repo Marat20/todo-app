@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { useAddTodosMutation } from '../redux/todosApi';
-import { task } from '../helper/taskObj';
+import { memo, useState } from 'react';
+import { useAddTodosMutation } from '../../redux/todosApi';
+import { task } from '../../utils/taskObj';
 
-export const Header = () => {
+export const Header = memo(() => {
   const [text, setText] = useState('');
   const [addTodos] = useAddTodosMutation();
 
-  const handleAddTodos = async (text, e) => {
+  const handleAddTodos = async (
+    text: string,
+    e: React.MouseEvent<HTMLInputElement, MouseEvent>
+  ) => {
     e.preventDefault();
     const newTask = task(text, false);
     await addTodos(newTask).unwrap();
@@ -23,7 +26,7 @@ export const Header = () => {
           name='new-task-input'
           id='new-task-input'
           placeholder='What do you have planned?'
-          onChange={(event) => setText(event.target.value)}
+          onChange={(e) => setText(e.target.value)}
         />
         <input
           type='submit'
@@ -34,4 +37,4 @@ export const Header = () => {
       </form>
     </header>
   );
-};
+});

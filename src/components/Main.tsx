@@ -1,9 +1,8 @@
-import React from 'react';
-import { Todos } from './Todos';
-import { DoneTodos } from './DoneTodos';
+import { Todos } from './todos/Todos';
 import { Routes, Route, Link } from 'react-router-dom';
+import { memo } from 'react';
 
-export const Main = () => {
+export const Main = memo(() => {
   return (
     <section className='task-list'>
       <menu className='menu'>
@@ -15,9 +14,9 @@ export const Main = () => {
         </Link>
       </menu>
       <Routes>
-        <Route path='/' element={<Todos />} />
-        <Route path='done' element={<DoneTodos />} />
+        <Route path='/' element={<Todos done={false} />} />
+        <Route path='done' element={<Todos done={true} />} />
       </Routes>
     </section>
   );
-};
+});
